@@ -1,0 +1,15 @@
+<h1>INDEX</h1>
+<ul>
+  <% @tasks.each do |task| %>
+    <% if task.completed == true  %>
+   <li>[X] <%= task.title %></li>
+     <%= link_to task.title, show_path(task) %>
+   <% else %>
+   <li>[ ] <%= task.title %></li>
+     <%= link_to task.title, show_path(task) %>
+  <% end %>
+  <% end %>
+</ul>
+
+
+<%= link_to "create a new task", new_path(@task) %>
